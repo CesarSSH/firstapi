@@ -1,0 +1,24 @@
+CREO EL CONTENEDOR CON BASE DE DATOS PG
+docker run --name c-postgres -e POSTGRES_USER=cesar -e POSTGRES_PASSWORD=mypass -p 5433:5432 -d postgres
+INICIO EL CONTENEDOR
+docker start c-postgres
+LO DETENGO
+ docker stop c-postgres
+
+LO ELIMINO CON
+docker rm c-postgres
+
+ACCESO AL CONTENEDOR Y LA LINEA DE COMANDOS POSTGRES
+docker exec -it c-postgres psql -U cesar
+
+ACCESO AL BASH
+docker exec -it c-postgres bash
+
+INICIO SESION
+psql -U cesar --password
+
+ACCEDO A LA BASE DE DATOS
+\c gorm
+
+VEO LA INFORMACION DE LA TABLA
+\d users
